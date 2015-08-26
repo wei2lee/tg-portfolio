@@ -1,0 +1,309 @@
+/*======================================
+Variable
+======================================*/
+
+$bower-path : "../bower_components/";
+$bootstrap-path : "#{$bower_path}bootstrap-sass/assets/stylesheets/";
+$icon-font-path : "#{$bower-path}bootstrap-sass/assets/fonts/bootstrap/";
+$fa-font-path : "#{$bower-path}fontawesome/fonts/";
+
+
+$bg-light-theme:#fff;
+$text-light-theme:#777;
+$dark-text-light-theme:#555;
+$small-title-light-theme:#102119;
+$assertive-text-light-theme:#e45336;
+
+$bg-deep-theme:#00B5CF ;
+$text-deep-theme:#fff;
+$dark-text-deep-theme:#fff;
+$small-title-deep-theme:#102119;
+$assertive-text-deep-theme:#e45336;
+
+/*======================================
+Import
+======================================*/
+@import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap-sprockets";
+@import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "../bower_components/fontawesome/scss/font-awesome";
+/*======================================
+Utility
+======================================*/
+.full-width {
+    position: relative;
+    max-width: 100%;
+    min-height: 400px;
+}
+
+@mixin create-margin($word, $value) {
+    .margin-#{$word} {
+        margin:$value;   
+    }
+
+    .margin-#{$word}-top {
+        margin-top:$value;   
+    }
+
+    .margin-#{$word}-bottom {
+        margin-top:$value;   
+    }
+
+    .margin-#{$word}-left {
+        margin-left:$value;   
+    }
+
+    .margin-#{$word}-right {
+        margin-right:$value;   
+    }
+
+    .margin-#{$word}-horizontal {
+        margin-left: $value;
+        margin-right: $value;
+    }
+
+    .margin-#{$word}-vertical {
+        margin-top: $value;
+        margin-bottom: $value;
+    }
+}
+
+@mixin create-padding($word, $value) {
+    .padding-#{$word} {
+        padding:$value;   
+    }
+
+    .padding-#{$word}-top {
+        padding-top:$value;   
+    }
+
+    .padding-#{$word}-bottom {
+        padding-top:$value;   
+    }
+
+    .padding-#{$word}-left {
+        padding-left:$value;   
+    }
+
+    .padding-#{$word}-right {
+        padding-right:$value;   
+    }
+
+    .padding-#{$word}-horizontal {
+        padding-left: $value;
+        padding-right: $value;
+    }
+
+    .padding-#{$word}-vertical {
+        padding-top: $value;
+        padding-bottom: $value;
+    }
+}
+
+
+@include create-padding('xxs', 5px);
+@include create-padding('xs', 10px);
+@include create-padding('md', 20px);
+@include create-padding('lg', 40px);
+
+@include create-margin('xxs', 5px);
+@include create-margin('xs', 10px);
+@include create-margin('md', 20px);
+@include create-margin('lg', 40px);
+
+/*======================================
+Main Layout
+======================================*/
+
+body {
+    margin:0;
+    padding:0;
+    border:0;
+    vertical-align: baseline;
+    font-size:100%;
+}
+
+html {
+    overflow-y: scroll;
+    font-size: 100%;
+    -webkit-text-size-adjust: 100%;   
+}
+
+body {
+    padding-top:50px;   
+    
+    font-family: "brandon-grotesque",sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    
+    font-size:18px;
+    
+    transition: background-color 500ms ease-out 1s;
+    background-color: #fff;
+    color: #777;
+    line-height:1.7;
+}
+
+p {
+    font-family: "brandon-grotesque",sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 1.5em;
+    font-size: 1.1em;
+    
+    margin:7px 0;
+}
+
+.section-boxed {
+    margin:30px auto;   
+    @media screen and (min-width:$screen-sm-min) {
+        margin:90px auto;   
+        
+    }
+}
+
+.small-title {
+    font-size:0.85em;
+    color:#555;
+    line-height:1.6em;
+    letter-spacing:6px;
+
+}
+
+.title {
+    font-size:1.3em;
+    font-weight:400;
+    color:#555;
+    
+    &::after {
+        display: block;
+        overflow: hidden;
+        margin: auto;
+        margin-top: 13px;
+        width: 70px;
+        height: 2px;
+        background: rgba(0, 0, 0, 0.3);
+        content: '';
+        text-indent: -999em;
+    }
+}
+
+.title-element {
+    margin:auto auto auto 0;
+    padding:20px 0 25px 0;
+    text-align:center;
+    
+    margin:21px 0;
+    line-height:45px;
+    padding-top:45px;
+    padding-bottom:45px;
+}
+
+.list-item-title {
+    font-size:1.1em;
+    margin-bottom:20px;  
+    color:#102119;
+}
+
+.vertical-center-container {
+    position:relative;
+}
+
+.vertical-center {
+    position:relative;
+    top:50%;
+    transform:translateY(-50%);
+}
+
+.thumbnail-container {
+    min-height:200px;
+    .circle-img-container {
+        margin:0 auto;
+        text-align:center;
+        border-radius: 50%;
+        background-color: #00b5d1;
+        width:80px;
+        height:80px;
+        @extend .vertical-center-container;
+
+        .fa {
+            @extend .vertical-center;
+            font-size:30px;   
+            color:#fff;
+        }
+    }
+} 
+.caption {
+    .caption-title {
+        color:red;
+    }
+    .caption-desc {
+        margin:0 auto;
+    }
+}
+
+.img-responsive.full-width {
+    width:100%;   
+}
+.img-responsive {
+    height:auto;   
+}
+
+
+/*======================================
+Page Layout
+======================================*/
+#service {
+    .service-content {
+        padding:5px;   
+    }
+}
+
+#toptierwork {
+    .toptierwork-content {
+        width:75%;
+        margin:0 auto;
+    }
+    
+    .toptierwork-content-title {
+        i.fa {
+            display:block; 
+        }   
+    }
+    
+}
+
+#appwebuild {
+    .circle-img-container-wrapper {
+        display:table;
+        text-align:center;
+    }
+    .appwebuild-content {
+        margin-top:20px;
+        margin-bottom:45px;
+        
+        
+    }
+}
+
+#wefocusproduct {
+    .wefocusproduct-content {
+        font-size:1.3em;
+        font-weight:400;  
+    }
+}
+
+#products {
+    .row {
+        @include make-row(0);
+        >div {
+            @include make-xs-column(12, 0);
+            @include make-sm-column(4, 0);
+        }
+    }
+}
+
+#testimonials {
+    
+}
+
+
